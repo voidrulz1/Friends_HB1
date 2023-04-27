@@ -1,9 +1,8 @@
 
 
+const Hangbot = require('./hangbot.js')
+
 const Monitor = require('ping-monitor');
-
-
-const keepAlive = require('./server');
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
