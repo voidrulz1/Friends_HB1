@@ -146,9 +146,6 @@ var __spreadArray =
 exports.__esModule = true;
 
 var fs = require('fs');
-const axios = require('axios');
-var FormData = require('form-data');
-const request = require('request');
 var WebSocket = require("ws");
 
 const readline = require("readline");
@@ -156,7 +153,6 @@ const { triggerAsyncId } = require("async_hooks");
 const { resolve } = require('path');
 const { response } = require('express');
 const dotenv = require('dotenv').config();
-
 
 
 
