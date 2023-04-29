@@ -3,7 +3,7 @@ const server = express();
 require('dotenv').config();
 
 
-const port = process.env.EXPRESS_PORT;
+var port = process.env.EXPRESS_PORT;
 
 server.all('/', (req, res) => {
   res.send('<h2>Server is ready!</h2>');
