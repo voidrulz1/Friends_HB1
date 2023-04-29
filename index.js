@@ -1,32 +1,16 @@
-"use strict";
-
 require('dotenv').config();
-
 const Monitor = require('ping-monitor')
-const express = require('express');
-const server = express();
-
-const Hangbot = require('./hangbot.js')
-//const Musicbot = require('./musicbot.js')
-
-server.all('/', (req, res) => {
-  res.send('<h2>Server is ready!</h2>');
-});
-
-server.get('/records.js', function(req, res) {
-  res.sendFile(__dirname + "/records.js");
-});
-
-server.listen(process.env.EXPRESS_PORT, () => {
-    console.log('Server Ready.');
-  });
+const keepAlive = require('./server');
+keepAlive();
 
 
 const myMonitor = new Monitor({
-  address: process.env.PING_TARGET,
+  website: process.env.PING_TARGET,
   title: process.env.PING_TARGET,
-  interval: 1
+  interval: 2
 });
+
+
 
 myMonitor.on('up', function (res, state) {
     console.log('Yay!! ' + state.address + ' is up.');
